@@ -7,7 +7,7 @@ on:
 jobs:
   build:
     runs-on: windows-latest
-    timeout-minutes: 360
+    timeout-minutes: 450
 
     steps:
       - name: 1. Enable Remote Desktop & Firewall
@@ -44,16 +44,16 @@ jobs:
           Write-Host "==================================================" -ForegroundColor Green
           Write-Host "  >>> RDP SERVER IS READY! <<<" -ForegroundColor Cyan
           Write-Host "  Tailscale IP : $ts_ip" -ForegroundColor Yellow
-          Write-Host "  Username     : CynetAdmin" -ForegroundColor Yellow
-          Write-Host "  Password     : Cynet@2026" -ForegroundColor Yellow
+          Write-Host "  Username     : m" -ForegroundColor Yellow
+          Write-Host "  Password     : m" -ForegroundColor Yellow
           Write-Host "  >> Open mstsc and connect to: $ts_ip" -ForegroundColor Magenta
           Write-Host "==================================================" -ForegroundColor Green
 
       - name: 4. Keep Server Alive (6 Hours)
         run: |
-          for ($i = 1; $i -le 360; $i++) {
+          for ($i = 1; $i -le 450; $i++) {
             Start-Sleep -Seconds 60
-            Write-Host "[$i/360] Server running..."
+            Write-Host "[$i/450] Server running..."
           }
 
 
